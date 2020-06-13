@@ -3,6 +3,10 @@
  * @return {number[]}
  */
 const largestDivisibleSubset = function (nums) {
+    if (nums.length < 2) {
+        return nums;
+    }
+
     const cnt = new Array(nums.length).fill(1);
     const prev = new Array(nums.length).fill(-1);
     let maxCnt = 0;
