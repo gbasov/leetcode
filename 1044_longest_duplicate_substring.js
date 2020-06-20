@@ -1,5 +1,5 @@
 let powers = [];
-const Q = 15485863;
+const Q = 12000017;
 const BASE = 26;
 
 /**
