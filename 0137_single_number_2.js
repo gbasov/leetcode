@@ -7,19 +7,15 @@ const singleNumber = nums => {
     let doubles = 0;
 
     for (num of nums) {
-        // if a new bit was in singles, then remove it from singles
-        // if a new bit was not in singles and not in doubles, then add it to singles
         singles = (~doubles) & (singles ^ num);
-
-        // add to doubles if it's not in singles and in doubles
-        // remove from doubles if it's in singles or in doubles
         doubles = (~singles) & (doubles ^ num);
-
-        console.log(num, 'singles:', singles.toString(2), 'doubles:', doubles.toString(2));
     }
 
     return singles;
 };
 
-console.log(singleNumber([2,2,3,2]));
-// console.log(singleNumber([0,1,0,1,0,1,99]));
+// We're creating some kind of a loop where every incoming bit comes to singles first
+// When it comes second time it's dropped to doubles
+// When it comes thrird time it's removed from doubles
+// This way we unsure that all the bits that occured three times are sifted.
+// Basically, we don't care with which numbers bits come, we just count bit occurances.
