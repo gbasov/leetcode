@@ -19,5 +19,5 @@ const singleNumber = nums => {
 // We're creating some kind of a loop where every incoming bit comes to singles first.
 // When it comes second time it's dropped to doubles.
 // When it comes third time it's removed from doubles.
-// This way we unsure that all the bits that occured three times are sifted.
+// This way we ensure that all the bits that occured three times are sifted.
 // Basically, we don't care with which numbers bits come, we just count bit occurances.
